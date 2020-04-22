@@ -15,7 +15,7 @@ import (
 type HTTPClientMock struct {
 }
 
-func (h HTTPClientMock) doRequest(url string, user string, password string) ([]byte, error) {
+func (h HTTPClientMock) doRequest(url string, user string, password string, headers map[string]string) ([]byte, error) {
 	return []byte("{\"name\":\"alfa\", \"tags\":[\"a\", \"b\"]}"), nil
 }
 
@@ -57,7 +57,7 @@ func TestGetHTTPClient(t *testing.T) {
 func TestDoRequest(t *testing.T) {
 	dockerSvc := DockerService{}
 	dockerSvc.httpClient = &HTTPClientImpl{}
-	bytes, e := dockerSvc.httpClient.doRequest("http://google.com.br", "alfa", "beta")
+	bytes, e := dockerSvc.httpClient.doRequest("http://google.com.br", "alfa", "beta", nil)
 	assert.Nil(t, e)
 	assert.NotNil(t, bytes)
 }

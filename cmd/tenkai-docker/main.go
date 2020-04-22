@@ -57,12 +57,6 @@ func initAPIs(appContext *handlers.AppContext) {
 func initRepository(database *dbms.Database) handlers.Repositories {
 	repositories := handlers.Repositories{}
 	repositories.DockerDAO = &repository.DockerDAOImpl{Db: database.Db}
-	repositories.EnvironmentDAO = &repository.EnvironmentDAOImpl{Db: database.Db}
-	repositories.UserDAO = &repository.UserDAOImpl{Db: database.Db}
-	repositories.VariableDAO = &repository.VariableDAOImpl{Db: database.Db}
-	repositories.SecurityOperationDAO = &repository.SecurityOperationDAOImpl{Db: database.Db}
-	repositories.UserEnvironmentRoleDAO = &repository.UserEnvironmentRoleDAOImpl{Db: database.Db}
-
 	return repositories
 }
 

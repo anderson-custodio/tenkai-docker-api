@@ -40,20 +40,6 @@ func (_m *DockerServiceInterface) GetDate(repo model.DockerRepo, imageName strin
 	return r0, r1
 }
 
-// GetDateCalledTimes provides a mock function with given fields:
-func (_m *DockerServiceInterface) GetDateCalledTimes() int {
-	ret := _m.Called()
-
-	var r0 int
-	if rf, ok := ret.Get(0).(func() int); ok {
-		r0 = rf()
-	} else {
-		r0 = ret.Get(0).(int)
-	}
-
-	return r0
-}
-
 // GetDockerTagsWithDate provides a mock function with given fields: payload, dao, globalCache
 func (_m *DockerServiceInterface) GetDockerTagsWithDate(payload model.ListDockerTagsRequest, dao repository.DockerDAOInterface, globalCache *sync.Map) (*model.ListDockerTagsResult, error) {
 	ret := _m.Called(payload, dao, globalCache)
@@ -70,6 +56,29 @@ func (_m *DockerServiceInterface) GetDockerTagsWithDate(payload model.ListDocker
 	var r1 error
 	if rf, ok := ret.Get(1).(func(model.ListDockerTagsRequest, repository.DockerDAOInterface, *sync.Map) error); ok {
 		r1 = rf(payload, dao, globalCache)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// GetDockerVariables provides a mock function with given fields: repo, imageName, imageTag
+func (_m *DockerServiceInterface) GetDockerVariables(repo *model.DockerRepo, imageName string, imageTag string) (*model.DockerVariablesResponse, error) {
+	ret := _m.Called(repo, imageName, imageTag)
+
+	var r0 *model.DockerVariablesResponse
+	if rf, ok := ret.Get(0).(func(*model.DockerRepo, string, string) *model.DockerVariablesResponse); ok {
+		r0 = rf(repo, imageName, imageTag)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*model.DockerVariablesResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(*model.DockerRepo, string, string) error); ok {
+		r1 = rf(repo, imageName, imageTag)
 	} else {
 		r1 = ret.Error(1)
 	}

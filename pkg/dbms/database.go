@@ -31,10 +31,5 @@ func (database *Database) Connect(dbmsURI string, local bool) {
 		panic("failed to connect database")
 	}
 
-	database.Db.AutoMigrate(&model.Environment{})
-	database.Db.AutoMigrate(&model.Variable{})
-	database.Db.AutoMigrate(&model.User{})
 	database.Db.AutoMigrate(&model.DockerRepo{})
-	database.Db.AutoMigrate(&model.SecurityOperation{})
-	database.Db.AutoMigrate(&model.UserEnvironmentRole{})
 }

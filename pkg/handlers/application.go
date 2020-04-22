@@ -22,12 +22,7 @@ import (
 
 //Repositories  Repositories
 type Repositories struct {
-	DockerDAO              repository.DockerDAOInterface
-	EnvironmentDAO         repository.EnvironmentDAOInterface
-	UserDAO                repository.UserDAOInterface
-	VariableDAO            repository.VariableDAOInterface
-	SecurityOperationDAO   repository.SecurityOperationDAOInterface
-	UserEnvironmentRoleDAO repository.UserEnvironmentRoleDAOInterface
+	DockerDAO repository.DockerDAOInterface
 }
 
 //AppContext AppContext
@@ -114,45 +109,6 @@ func commonHandler(next http.Handler) http.Handler {
 
 		next.ServeHTTP(w, r)
 	})
-}
-
-func (appContext *AppContext) hasAccess(email string, envID int) (bool, error) {
-	result := false
-	environments, err := appContext.Repositories.EnvironmentDAO.GetAllEnvironments(email)
-	if err != nil {
-		return false, err
-	}
-	for _, e := range environments {
-		if e.ID == uint(envID) {
-			result = true
-			break
-		}
-	}
-	return result, nil
-}
-
-func (appContext *AppContext) hasEnvironmentRole(principal model.Principal, envID uint, role string) (bool, error) {
-	var user model.User
-	var err error
-	if user, err = appContext.Repositories.UserDAO.FindByEmail(principal.Email); err != nil {
-		return false, err
-	}
-	result := &model.SecurityOperation{}
-	if result, err = appContext.Repositories.UserEnvironmentRoleDAO.
-		GetRoleByUserAndEnvironment(user, envID); err != nil {
-		return false, err
-	}
-	authorized := false
-	if result != nil {
-
-		for _, e := range result.Policies {
-			if e == role {
-				authorized = true
-				break
-			}
-		}
-	}
-	return authorized, nil
 }
 
 func (appContext *AppContext) rootHandler(w http.ResponseWriter, r *http.Request) {
