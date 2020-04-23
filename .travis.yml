@@ -27,7 +27,7 @@ before_script:
 script:
   - make build
   # - make test
-  # - sonar-scanner
+  - sonar-scanner
   - make container-image
   - make tag-image
   - make publish
