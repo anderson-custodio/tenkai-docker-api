@@ -3,8 +3,7 @@ language: go
 addons:
   sonarcloud:
     organization: "softplan"
-    token:
-      secure: "DRJaM+OzzI1F4yu0OYua3Wo+o8D7UeMm05rlRbUv2COuG4aCHNJEI1u4/+BZlY2BzqKPZdVqGl7wGKSRaYBGknEazDdCziGTHVk2A9nUKnDf7kqw6rwcNLyi05WtOwr7F0W9BTJp4XmZ6Zd6nzaCkuBgvVrX1CVI8BKKqEYuwfco1z6KNwWiFqSMKewUo+obGTvHLMU10LM/6xeI0hcp8ijldtlMOBvFqxH3g29Lq6+CqJVc9YvAvYvvBOr08BcTFsDnNfRXO52z2vHOBj2cTa0AWP2ooaQ3CUMoTPRMTW8rF/iE0XGrvIHdqZXibDNw3aeXJgIxtZkeU5NrQuqOltWvO344jf1OlfsmpuM3qVGBUGrcoBRinNLUBbz/xlmDIMR+CmQkAsWyC4JMbVyYc7kGgbUwzlYjopYgz7C/D8mgGNsDyipBZ/CqfR/s0eKVbI6cJpFjMx/Op2lxL1ko99sNGCLbS9Z0dYULh5ThiBbP1pwfMB0av2i7WHZwzSTASzDD4+pBUitiad0d3m+5vk3r2eU1T3nGXWaDbvSPGMlm31DQJT4mfpmRCODS8YkGVdEs9f+UM1snHqI4JYni0D872q6yh6kjmzZnnwJyTwYxhVRDNOPd7vK6DxnUXrtA4+OIgIyMJCgpo+ucVcPpTq89z/3DqWLNu7aJmCSoohg="
+    token: ${SONAR_TOKEN}
 
 go:
   - "1.12"
