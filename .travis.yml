@@ -3,7 +3,6 @@ language: go
 addons:
   sonarcloud:
     organization: "softplan"
-    token: ${SONAR_TOKEN}
 
 go:
   - "1.12"
