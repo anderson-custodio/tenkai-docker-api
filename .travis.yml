@@ -26,12 +26,7 @@ before_script:
 
 script:
   - make build
-#  - make test
-  - sonar-scanner
+  # - make test
   - make container-image
   - make tag-image
   - make publish
-
-env:
-  global:
-    secure: wiadqNoJpCK3r8TxaT8G0rW+s4udGKmOyNTGgd95dlyqzO8+RoEJspmBdaJgxVyKqen5uibK8nDf73eESncIICuUyPu4EXdr8kTr54h+6Cvzuy+Ir0+chfbkbIa22Rw34hqCFGmgOxBRpwRtp5qkqk3vZlSyHjfLgrjzycJLJtRep6VrAWQdzgrpdsWJe5DbdmbYfj2k4bQujblEe5cl/ySyeVsgKAK55X9JPvhbRoBntt5KksWwY3W/OAKbCsgWbkGjTZX8ZUCG7wSMeNvaML4bdJ3h+Mrhvz0ksQyrRY+fk0xLhbAcqtY0j0NKXFJ9RHF6WhxtmAm53oTQqTPmmyFeKUlBfsOh1sS74G62HNBF9KprkVOlNNYeQFFhnSSm2pSohx5XJE2Gkoj7PldGVIkzIUTONddnfoXKH9sJ4O9sej0rVWtLRsnRC5l8EVvBGazVmPEu8VbpMTpS+ousyVAZEQhy0+e86asO86l1RD8HQTo05pDk+xKYIzBjtYcXTekIHsCHxLD8nV+iKzmvtDGx99iGimBQJC3VnvCHC+yT4bgpBSwJx2/zk9V40bojE6PCg3S4OSTSGX1lh+TN2vvjelQ/LYOJYSvzH4mszmqF6OEJ5yogd1Yc6N8bGnJHHEtsEH4mYIJmLdEgRncf0w0Ss/YVAYAYT1c5cnXJQ3E=
