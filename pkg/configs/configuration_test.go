@@ -11,7 +11,7 @@ func check(e error) {
 }
 
 func TestReadConfigSucceed(t *testing.T) {
-	config, error := ReadConfig("app")
+	config, error := ReadConfig("tenkai-docker-api")
 	if error != nil || config == nil {
 		t.Error("Error reading config")
 	}
