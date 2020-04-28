@@ -29,6 +29,8 @@ func getTestData() model.DockerRepo {
 func TestCreateDockerRepo(t *testing.T) {
 
 	db, mock, err := sqlmock.New()
+	mock.ExpectBegin()
+	mock.ExpectCommit()
 
 	gormDB, err := gorm.Open("postgres", db)
 	defer gormDB.Close()
@@ -143,6 +145,8 @@ func TestGetDockerRepositoryByHost_Error(t *testing.T) {
 func TestDeleteDockerRepo(t *testing.T) {
 
 	db, mock, err := sqlmock.New()
+	mock.ExpectBegin()
+	mock.ExpectCommit()
 
 	gormDB, err := gorm.Open("postgres", db)
 	defer gormDB.Close()

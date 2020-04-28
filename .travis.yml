@@ -26,7 +26,7 @@ before_script:
 
 script:
   - make build
-  # - make test
+  - make test
   - make container-image
   - make tag-image
   - make publish
