@@ -10,6 +10,14 @@
   version = "v1.4.1"
 
 [[projects]]
+  digest = "1:c47f4964978e211c6e566596ec6246c329912ea92e9bb99c00798bb4564c5b09"
+  name = "github.com/armon/go-radix"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "1a2de0c21c94309923825da3df33a4381872c795"
+  version = "v1.0.0"
+
+[[projects]]
   digest = "1:ffe9824d294da03b391f44e1ae8281281b4afc1bdaa9588c9097785e3af10cec"
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
@@ -24,6 +32,31 @@
   pruneopts = "UT"
   revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
   version = "v3.2.0"
+
+[[projects]]
+  digest = "1:4ae2d0c06835b4f5b244d2be8c206eb9f6540386fabe3b8b1e36d30010540214"
+  name = "github.com/elastic/go-sysinfo"
+  packages = [
+    ".",
+    "internal/registry",
+    "providers/aix",
+    "providers/darwin",
+    "providers/linux",
+    "providers/shared",
+    "providers/windows",
+    "types",
+  ]
+  pruneopts = "UT"
+  revision = "40cd77c89f2e39b0278f0779acc5722d2a69425b"
+  version = "v1.5.0"
+
+[[projects]]
+  digest = "1:1ccb0a9b1971646dcaa9537cce0423a14aaf0643311abb8da753cd59372915d5"
+  name = "github.com/elastic/go-windows"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "8c929792e70203792e3baf128c380e28754ae8b5"
+  version = "v1.0.1"
 
 [[projects]]
   digest = "1:80057945464ffb5b0da1f026beb8df0e8dbd098eaf771a349291bed2cd29a83e"
@@ -79,6 +112,14 @@
   pruneopts = "UT"
   revision = "f5c5f50e6090ae76a29240b61ae2a90dd810112e"
   version = "v1.0.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:ca41e6bafdc8d60c47dba38e9adfc75219a2892b09e5c2160161e7b6bf9562c2"
+  name = "github.com/joeshaw/multierror"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "69b34d4ec901851247ae7e77d33909caf9df99ed"
 
 [[projects]]
   digest = "1:31e761d97c76151dde79e9d28964a812c46efc5baee4085b86f68f0c654450de"
@@ -175,6 +216,26 @@
   version = "v1.0.0"
 
 [[projects]]
+  digest = "1:b12cfb0b45b8e782f75d2e2dc694d0f6c6acf08653f73720f049769091a7d85a"
+  name = "github.com/prometheus/procfs"
+  packages = [
+    ".",
+    "internal/fs",
+    "internal/util",
+  ]
+  pruneopts = "UT"
+  revision = "d3334bf511d8b1570144f488cc14d08b539df979"
+  version = "v0.3.0"
+
+[[projects]]
+  digest = "1:7146d5b587395e3db90e8ed497d138fd0fb04d7e0739e3de60119bbbf6cc78f7"
+  name = "github.com/santhosh-tekuri/jsonschema"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "137f44a49015e5060a447c331aa37de6e0f50267"
+  version = "v2.2.0"
+
+[[projects]]
   digest = "1:0599141a8403114d34f1e546604ad6c5361b70dfa80e80c635f438cdbf71b43a"
   name = "github.com/sirupsen/logrus"
   packages = ["."]
@@ -253,10 +314,51 @@
   version = "v1.2.0"
 
 [[projects]]
+  digest = "1:49f40e5e11be5f57372a268f451e25b60654c0418cc26962f8f7ac094a04c652"
+  name = "go.elastic.co/apm"
+  packages = [
+    ".",
+    "apmconfig",
+    "internal/apmcloudutil",
+    "internal/apmcontext",
+    "internal/apmhostutil",
+    "internal/apmhttputil",
+    "internal/apmlog",
+    "internal/apmschema",
+    "internal/apmstrings",
+    "internal/apmversion",
+    "internal/configutil",
+    "internal/iochan",
+    "internal/pkgerrorsutil",
+    "internal/ringbuffer",
+    "internal/wildcard",
+    "model",
+    "module/apmgorilla",
+    "module/apmhttp",
+    "stacktrace",
+    "transport",
+  ]
+  pruneopts = "UT"
+  revision = "ba58cd693bff626461c1888df0d42cbcddc75154"
+  version = "v1.10.0"
+
+[[projects]]
+  digest = "1:65adaec6315f2b4543e781da380f1c7f14a6091b714ff675d93944ee558399b3"
+  name = "go.elastic.co/fastjson"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "dca77b896763302a85d3258e4831cbf893e952e3"
+  version = "v1.1.0"
+
+[[projects]]
   branch = "master"
-  digest = "1:f88172369bcdae548777d8f2c59b11561f7e41686f426c583a7abaeec6978cc7"
+  digest = "1:c0799dc71737f71b4f67da6347e5e838a2334d3156d40b3282079864e7f86337"
   name = "golang.org/x/sys"
-  packages = ["unix"]
+  packages = [
+    "unix",
+    "windows",
+    "windows/registry",
+  ]
   pruneopts = "UT"
   revision = "669c56c373c468cbe0f0c12b7939832b26088d33"
 
@@ -291,6 +393,14 @@
   revision = "53403b58ad1b561927d19068c655246f2db79d48"
   version = "v2.2.8"
 
+[[projects]]
+  branch = "master"
+  digest = "1:812d0f78132bbf7731c247b2a3ea54710ecc8fd251a9e4898be9793f25dbdb1a"
+  name = "howett.net/plist"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "1454fab16a0642638feb0ae98c41f79eccb2a20a"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
@@ -301,13 +411,13 @@
     "github.com/jinzhu/gorm",
     "github.com/jinzhu/gorm/dialects/postgres",
     "github.com/jinzhu/gorm/dialects/sqlite",
-    "github.com/lib/pq",
     "github.com/olivere/elastic",
     "github.com/olivere/elastic/config",
     "github.com/sirupsen/logrus",
     "github.com/spf13/viper",
     "github.com/stretchr/testify/assert",
     "github.com/stretchr/testify/mock",
+    "go.elastic.co/apm/module/apmgorilla",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
