@@ -11,5 +11,3 @@ coverage.html
 
 # Ignore vscode workspace file
 *.code-workspace
-
-tenkai-docker-api.yaml
