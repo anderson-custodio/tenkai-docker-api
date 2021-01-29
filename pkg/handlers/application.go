@@ -18,6 +18,7 @@ import (
 	"github.com/softplan/tenkai-docker-api/pkg/dbms/repository"
 	"github.com/softplan/tenkai-docker-api/pkg/global"
 	dockerapi "github.com/softplan/tenkai-docker-api/pkg/service/docker"
+	"go.elastic.co/apm/module/apmgorilla"
 )
 
 //Repositories  Repositories
@@ -38,6 +39,7 @@ type AppContext struct {
 }
 
 func defineRotes(r *mux.Router, appContext *AppContext) {
+	r.Use(apmgorilla.Middleware())
 	r.HandleFunc("/dockerRepo", appContext.listDockerRepositories).Methods("GET")
 	r.HandleFunc("/dockerRepo", appContext.newDockerRepository).Methods("POST")
 	r.HandleFunc("/dockerRepo/{id}", appContext.deleteDockerRepository).Methods("DELETE")

@@ -1,5 +1,4 @@
-/build
-/build/*
+build/
 .idea
 .idea/*
 
@@ -12,3 +11,5 @@ coverage.html
 
 # Ignore vscode workspace file
 *.code-workspace
+
+tenkai-docker-api.yaml
